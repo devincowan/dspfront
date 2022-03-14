@@ -1,0 +1,13 @@
+# compose file used for development
+# run with `docker-compose up`
+version: '3'
+services:
+  hydroshare:
+    build:
+      context: .
+      dockerfile: devDockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - ".:/dspfront"
+      - '/dspfront/node_modules'

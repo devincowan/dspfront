@@ -1,0 +1,10 @@
+# compose file used for non-development
+# run with `docker-compose -f docker-compose.yml up`
+version: '3'
+services:
+  hydroshare:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"

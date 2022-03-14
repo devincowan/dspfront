@@ -1,0 +1,15 @@
+FROM node:16
+WORKDIR /dspfront
+
+# add `/dspfront/node_modules/.bin` to $PATH
+ENV PATH /dspfront/node_modules/.bin:$PATH
+
+# docker-compose.override.yml contains volume sync
+# COPY package*.json ./
+# RUN npm install
+# RUN npm uninstall sharp
+# RUN npm install --arch=x64 --platform=linux sharp
+# RUN npm run build
+
+EXPOSE 5001
+CMD ["npm", "run", "serve", "--", "--port", "5001", "--host", "dspfront"]
